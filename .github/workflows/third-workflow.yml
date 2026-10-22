@@ -1,0 +1,26 @@
+name: Script-03 
+
+on:
+  push:
+    branches: 
+      - main
+  workflow_dispatch: 
+
+jobs: 
+  hello-world:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: This will execute the script. 
+        run: echo "Welcome to the Github Actions!!!!"
+
+      - name: Current Working Directory
+        run: pwd 
+
+      - name: List Directory 
+        run: ls -la 
+
+      - name: Create a sample File 
+        run: echo "Hello Github Acionts" > new-sample.txt
+
+      - name: Display the file COntent
+        run: cat sample.txt
