@@ -23,4 +23,4 @@ jobs:
         run: echo "Hello Github Acionts" > new-sample.txt
 
       - name: Display the file COntent
-        run: cat sample.txt
+        run: cat new-sample.txt
