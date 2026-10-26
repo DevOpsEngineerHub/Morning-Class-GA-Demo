@@ -1,0 +1,27 @@
+name: Multiple Jobs Demo 
+
+on: 
+  push: 
+  workflow_dispatch: 
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Build 
+        run: echo "Building the Application!!!"
+    
+  test:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Test
+        run: echo "Testing the Application!!!"
+  
+  security:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Security Scan
+        run: echo "Running Security Scans!!!"
