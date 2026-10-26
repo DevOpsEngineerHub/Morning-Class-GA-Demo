@@ -1,0 +1,23 @@
+name: Script-04
+
+on:
+  push:
+  workflow_dispatch: 
+
+jobs: 
+  checkout-code:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Repository 
+        uses: actions/checkout@v4
+
+      - name: Set up a Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Upload build Files
+        uses: actions/upload-artifacts@v4
+        with:
+          name: build-files 
+          path: dist/ 
