@@ -11,13 +11,10 @@ jobs:
       - name: Checkout Repository 
         uses: actions/checkout@v4
 
-      - name: Set up a Node.js
-        uses: actions/setup-node@v4
+      - name: Set up a python
+        uses: actions/setup-python@v5
         with:
-          node-version: '22'
+          python-version: '3.12'
 
-      - name: Upload build Files
-        uses: actions/upload-artifacts@v4
-        with:
-          name: build-files 
-          path: dist/ 
+      - name: Execute python files
+        run: python test.py
