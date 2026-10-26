@@ -16,5 +16,8 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Display python version
+        run: python --version
+
       - name: Execute python files
         run: python test.py
