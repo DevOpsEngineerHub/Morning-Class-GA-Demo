@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-APP_ENV: ${{ vars.APP_ENV }}
+  APP_ENV: ${{ vars.APP_ENV }}
 
 jobs:
   checkout-code:
