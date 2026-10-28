@@ -1,0 +1,25 @@
+name: APP ENV Demo
+
+on:
+  push:
+  workflow_dispatch: 
+
+jobs: 
+  checkout-code:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Repository 
+        uses: actions/checkout@v4
+
+      - name: Set up a python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Display python version
+        run: python --version
+
+      - name: Execute python files
+        run: python test.py
+        env: 
+          APP_ENV: development
