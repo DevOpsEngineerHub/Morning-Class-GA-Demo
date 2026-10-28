@@ -1,3 +1,4 @@
+import os
 print("Hello World")
 
 app_env = os.getenv("APP_ENV", "local")
