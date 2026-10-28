@@ -31,9 +31,5 @@ jobs:
     steps: 
       - name: Check the job variable
         run: echo "Env: $APP_ENV"
-      
-
-    
-
 
     
