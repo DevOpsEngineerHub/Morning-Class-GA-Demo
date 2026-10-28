@@ -1,0 +1,15 @@
+name: APP ENV Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+APP_ENV: ${{ vars.APP_ENV }}
+
+jobs:
+  checkout-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Workflow Variable
+        run: echo "Application env is $APP_ENV"
