@@ -4,22 +4,36 @@ on:
   push:
   workflow_dispatch: 
 
+env: 
+  APP_ENV: Development
+
 jobs: 
   checkout-code:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Checkout Repository 
-        uses: actions/checkout@v4
+    steps:
+      - name: Check Workflow Variable
+        run: echo "Env: $APP_ENV"
 
-      - name: Set up a python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Display python version
-        run: python --version
-
-      - name: Execute python files
-        run: python test.py
+      - name: Override the variable at the step level
+        run: echo "Env: $APP_ENV"
         env: 
-          APP_ENV: development
+          APP_ENV: Step-Environment
+
+      - name: check the variable again 
+        run: echo "Env: $APP_ENV"
+
+  deploy: 
+    runs-on: ubuntu-latest
+
+    env:
+      APP_ENV: production 
+
+    steps: 
+      - name: Check the job variable
+        run: echo "Env: $APP_ENV"
+      
+
+    
+
+
+    
