@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Check Workflow Variable
         run: echo "Env: $APP_ENV"
-
+        
       - name: Override the variable at the step level
         run: echo "Env: $APP_ENV"
         env:
@@ -30,4 +30,3 @@ jobs:
     steps:
       - name: Check the job variable
         run: echo "Env: $APP_ENV"
-```
