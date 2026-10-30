@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Validate Secret
         env:
-          API_TOKEN: ${{ secrets.DE_API_TOKENNN }}
+          API_TOKEN: ${{ secrets.DEMO_API_TOKEN }}
         run: |
           if [ -z "$API_TOKEN" ]; then
             echo "ERROR: API_TOKEN is missing!"
