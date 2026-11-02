@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-python-3.9:
+  test-python-39:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -19,7 +19,7 @@ jobs:
       - name: Check Python Version
         run: python --version
 
-  test-python-3.10:
+  test-python-310:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -33,7 +33,7 @@ jobs:
       - name: Check Python Version
         run: python --version
 
-  test-python-3.11:
+  test-python-311:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
