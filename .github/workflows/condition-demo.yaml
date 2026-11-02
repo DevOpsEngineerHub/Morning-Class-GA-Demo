@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Display Workflow Information.
-        run: Echo "Triggered by every branch"
+        run: Echo "Triggered by every branch.."
 
       - name: Run only on Main Branch 
         if: ${{ github.ref_name == 'main' }}
