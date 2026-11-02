@@ -19,3 +19,5 @@ jobs:
           else
             echo "API_TOKEN is configured."
           fi
+        env: 
+          API_TOKEN: ${{ secrets.DEMO_API_TOKEN }}
