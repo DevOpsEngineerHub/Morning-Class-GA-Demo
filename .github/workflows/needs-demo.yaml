@@ -1,0 +1,26 @@
+name: Job Dependencies Demo
+
+on: 
+  push: 
+  workflow_dispatch: 
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Build 
+        run: echo "Building the Application!!!"
+    
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps: 
+      - name: Test
+        run: echo "Testing the Application!!!"
+  
+  security:
+    runs-on: ubuntu-latest
+    needs: test
+    steps: 
+      - name: Security Scan
+        run: echo "Running Security Scans!!!"
