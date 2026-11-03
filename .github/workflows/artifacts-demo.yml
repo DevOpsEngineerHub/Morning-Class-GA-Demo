@@ -11,7 +11,7 @@ jobs:
       - name: Create a test Report 
         run: |
           mkdir reports
-          echo "All tests are passed" > reports/test-reports.txt
+          echo "All tests are passed" > reports/test-report.txt
 
 
       - name: Upload Test Report
@@ -19,4 +19,3 @@ jobs:
         with: 
           name: test-report
           path: reports/test-report.txt
-  
