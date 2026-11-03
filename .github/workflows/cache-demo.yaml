@@ -1,0 +1,22 @@
+name: Cache Demo without Requirements.txt
+
+on: 
+  workflow_dispatch: 
+
+jobs: 
+  install: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Cache python packages
+        uses: actions/cache@v4 
+        with: 
+          path: ~/.cache/pip
+          key: python-packages-v1
+
+      - name: install python packages
+        run: |
+          pip install requests flask django numpy pandas
+
+      - name: verify rthe installation 
+        run: pip list
