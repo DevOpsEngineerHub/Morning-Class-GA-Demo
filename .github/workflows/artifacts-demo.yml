@@ -1,0 +1,22 @@
+name: Artifacts Demo 
+
+on: 
+  workflow_dispatch: 
+
+jobs: 
+  test: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Create a test Report 
+        run: |
+          mkdir reports
+          echo "All tests are passed" > reports/test-reports.txt
+
+
+      - name: Upload Test Report
+        uses: actions/upload-artifacts@v4 
+        with: 
+          name: test-report
+          path: reports/test-report.txt
+  
