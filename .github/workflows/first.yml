@@ -1,7 +1,7 @@
 name: This is the First Github Actions Script. 
 
 on:
-  workflow_dispatch
+  workflow_call: 
 
 jobs: 
   hello-world:
