@@ -5,4 +5,4 @@ on:
 
 jobs:
   deployment:
-    uses: ./github/workflows/first.yml
+    uses: ./.github/workflows/first.yml
