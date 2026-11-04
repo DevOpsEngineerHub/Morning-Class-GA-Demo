@@ -1,0 +1,15 @@
+name: Composite Action 04-11
+
+on: 
+  workflow_dispatch:
+
+jobs: 
+  demo: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Execute Composte Action 
+        uses: ./.github/actions/my-action
