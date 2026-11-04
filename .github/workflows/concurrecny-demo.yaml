@@ -1,0 +1,17 @@
+name: Concurrency Demo 
+
+on: 
+  workflow_dispatch: 
+
+jobs: 
+  test: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Task 1 
+        run: |
+          echo "Task Started"
+          sleep 30 
+
+      - name: Task 2 
+        run: echo "Task Completed"
