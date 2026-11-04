@@ -12,7 +12,7 @@ jobs:
         run: echo "Start the work flow"
 
       - name: Step 2
-        run: exit 1
+        run: exit 0
 
       - name: Step 3 - Success
         if: success()
