@@ -1,0 +1,28 @@
+name: Error Handling 04-11
+
+on: 
+  workflow_dispatch: 
+
+jobs: 
+  test: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Step 1
+        run: echo "Start the work flow"
+
+      - name: Step 2
+        run: exit 1
+
+      - name: Step 3 - Success
+        if: success()
+        run: echo "This will print on successfull. "
+
+      - name: Step 4
+        if: failure()
+        run: echo "Something went wrong"
+
+      - name: Step 5 - Always
+        if: always()
+        run: echo: "Workflow execution completed"
+
