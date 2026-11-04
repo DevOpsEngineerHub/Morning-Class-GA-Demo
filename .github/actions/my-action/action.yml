@@ -1,0 +1,23 @@
+name: my First Composite Action
+
+description: This will print 4 steps. 
+
+runs: 
+  using: composite
+  steps: 
+    - name: Step 1 
+      shell: bash 
+      run: echo "This is step 1"
+
+    - name: Step 2 
+      shell: bash 
+      run: echo "This is Step 2"
+
+    - name: Step 3 
+      shell: bash 
+      run: echo "This is Step 3"
+
+
+    - name: Step 4
+      shell: bash
+      run: echo "This is Step 4."
