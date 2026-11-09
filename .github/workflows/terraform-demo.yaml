@@ -1,0 +1,35 @@
+
+name: Terraform EC2 Provisioning
+
+on:
+  workflow_dispatch:
+
+jobs:
+  provision-ec2:
+    name: Provision EC2 using Terraform
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 3: Install Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      # Step 4: Terraform Initialization
+      - name: Terraform Init
+        run: terraform init
+
+      # Step 5: Terraform Validation
+      - name: Terraform Validate
+        run: terraform validate
+
+      # Step 6: Terraform Plan
+      - name: Terraform Plan
+        run: terraform plan
+
+      # Step 7: Provision EC2
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
