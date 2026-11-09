@@ -1,11 +1,11 @@
-name: This is the First Github Actions Script. 
+name: Self Hosted Runner Demo
 
 on:
-  workflow_call: 
+  workflow_dispatch: 
 
 jobs: 
   hello-world:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps: 
       - name: This will execute the script. 
         run: echo "Welcome to the Github Actions!!!!"
