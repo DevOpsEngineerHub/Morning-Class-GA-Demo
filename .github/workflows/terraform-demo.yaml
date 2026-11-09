@@ -7,12 +7,20 @@ on:
 jobs:
   provision-ec2:
     name: Provision EC2 using Terraform
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       # Step 1: Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      # Step 2: Configure AWS credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
 
       # Step 3: Install Terraform
       - name: Setup Terraform
